@@ -1,0 +1,19 @@
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Daniels Gallery - {{title}}</title>
+  {% else %}
+    <title> Daniels Gallery</title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %} 
+    
+    {%endblock%}
+</body>
+</html>
