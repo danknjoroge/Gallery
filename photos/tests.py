@@ -22,6 +22,11 @@ class CategoryTestCase(TestCase):
     # Testing  instance
     def test_instance(self):
         self.assertTrue(isinstance(self.sports,Category))
+    
+    def test_save_location(self):
+        self.sports.save_category()
+        category= Category.objects.all()
+        self.assertTrue(len(category)>0)
 
 
 

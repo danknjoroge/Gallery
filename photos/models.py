@@ -14,6 +14,11 @@ class Location(models.Model):
 class Category(models.Model):
     category = models.CharField(max_length=71, null=TRUE, default=None)
 
+    def save_category(self):
+        self.save()
+
+    def __str__(self):
+        return self.category
 
 class Image(models.Model):
     name = models.CharField(max_length=55)
