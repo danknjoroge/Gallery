@@ -13,7 +13,19 @@
 <div class="container">
     <h1 class="text-center">Image Gallery Coming Soon......</h1>
 </div>
-
+{% for photo in image %}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" id="imgs">
+        <div class="hovereffect">
+            <!-- <img class="img-fluid" src="{{photo.image.url}}" alt=""> -->
+            <div class="overlay">
+               <h2>{{photo.name}}</h2>
+               <a class="info" href="{% url 'image'%}">View Photo</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <h3>Image is not available</h3>
+    {% endfor %}
 
 
 {% endblock %}
