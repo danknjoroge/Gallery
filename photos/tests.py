@@ -10,6 +10,19 @@ class LocationTest(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.nairobi,Location))
 
+    def test_save_location(self):
+        self.nairobi.save_location()
+        location= Location.objects.all()
+        self.assertTrue(len(location)>0)
+
+class CategoryTestCase(TestCase):
+    
+    def setUp(self):
+        self.sports= Category(category = "Sports")
+    # Testing  instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.sports,Category))
+
 
 
 

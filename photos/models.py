@@ -1,9 +1,9 @@
-from pickle import FALSE
+from pickle import FALSE, TRUE
 from django.db import models
 
 # Create your models here.
 class Location(models.Model):
-    location = models.CharField(max_length=71)
+    location = models.CharField(max_length=71, blank=TRUE, default=None)
 
     def save_location(self):
         self.save()
@@ -12,15 +12,15 @@ class Location(models.Model):
         return self.location
 
 class Category(models.Model):
-    category = models.CharField(max_length=71)
+    category = models.CharField(max_length=71, null=TRUE, default=None)
 
 
 class Image(models.Model):
     name = models.CharField(max_length=55)
     description = models.TextField()
     image = models.ImageField(upload_to = 'photos/', null=FALSE, blank=FALSE)
-    location = models.ForeignKey(Location, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, null=TRUE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=TRUE)
     
 
     def __str__(self):
