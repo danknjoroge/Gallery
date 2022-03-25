@@ -28,6 +28,11 @@ class Image(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=TRUE)
     
 
+    @classmethod
+    def search_by_name(cls, name):
+        image= cls.objects.filter(name__icontains=name)
+        return image
+
     def __str__(self):
         return self.name
     class Meta:
