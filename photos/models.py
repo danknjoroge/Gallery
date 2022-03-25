@@ -32,6 +32,8 @@ class Image(models.Model):
     # def search_by_name(cls, name):
     #     image= cls.objects.filter(name__icontains=name)
     #     return image
+    def save_image(self):
+        self.save()
 
     @classmethod
     def search_by_category(cls, category):

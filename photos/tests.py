@@ -44,7 +44,7 @@ class TestImage(TestCase):
         self.sports.save_category()
 
         self.new_image= Image(name="Curly", description="An amazing picture", image="Add image", location=self.nairobi, category= self.sports )
-        self.new_image.save()
+        self.new_image.save_image()
 
     def tearDown(self):
         Image.objects.all().delete()
