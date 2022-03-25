@@ -4,4 +4,5 @@ from . import views
 urlpatterns = [
     re_path(r'^$', views.index, name='index'),
     re_path(r'image/', views.one_image, name='image'),
+    
 ]
