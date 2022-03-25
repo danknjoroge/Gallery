@@ -8,13 +8,13 @@ def index(request):
     image = Image.objects.all()
     return render(request, 'index.html', {'image': image})
 
-def one_image(request):
+def one_image(request, image_id):
     try:
-        image = Image.objects.get(id = image.id)
+        image = Image.objects.get(id = image_id)
     except ObjectDoesNotExist:
         raise Http404()
 
-    return render(request, 'one_image.html')
+    return render(request, 'one_image.html', {'image': image})
 
 # def search(request):
 #     if 'image' in request.GET and request.GET["image"]:
