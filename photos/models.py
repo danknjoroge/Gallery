@@ -23,20 +23,27 @@ class Category(models.Model):
 class Image(models.Model):
     name = models.CharField(max_length=55)
     description = models.TextField()
-    image = models.ImageField(upload_to = 'pics/', null=FALSE, blank=FALSE)
+    image_pic = models.ImageField(upload_to = 'pics/', null=True)
     location = models.ForeignKey(Location, on_delete=models.CASCADE, null=TRUE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=TRUE)
     
 
+    # @classmethod
+    # def search_by_name(cls, name):
+    #     image= cls.objects.filter(name__icontains=name)
+    #     return image
+
     @classmethod
-    def search_by_name(cls, name):
-        image= cls.objects.filter(name__icontains=name)
+    def search_by_category(cls, category):
+        image= cls.objects.filter(category__category__icontains=category)
         return image
 
     def __str__(self):
         return self.name
     class Meta:
         ordering = ('name',)
+
+
 
 
 
