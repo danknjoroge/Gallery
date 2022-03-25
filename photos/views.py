@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 from .models import Image
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 def index(request):
@@ -8,6 +9,11 @@ def index(request):
     return render(request, 'index.html', {'image': image})
 
 def one_image(request):
+    try:
+        image = Image.objects.get(id = image.id)
+    except ObjectDoesNotExist:
+        raise Http404()
+
     return render(request, 'one_image.html')
 
 # def search(request):

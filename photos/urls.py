@@ -5,8 +5,9 @@ from . import views
 
 urlpatterns = [
     re_path(r'^$', views.index, name='index'),
-    re_path(r'image/', views.one_image, name='image'),
     re_path(r'^search/', views.search, name='search'),
+    re_path(r'imagedetails/<int:image_id>', views.one_image, name='imagedetails'),
+
 ]
 
 
