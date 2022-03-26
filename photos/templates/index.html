@@ -4,7 +4,7 @@
 
 {% block styles %}
     {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ind.css' %}">
   {% endblock %}
 
 {% block content %}
@@ -13,21 +13,10 @@
 <div class="container">
     <h1 class="text-center">Image Gallery Coming Soon......</h1>
 </div>
-{% for photo in image %}
-      <!-- <div class="container " id="imgs">
-        <div class="hovereffect">
-            <img class="img-fluid" src="{{photo.image.url}}" alt="">
-            <div class="overlay">
-              <h2>{{photo.name}}</h2> 
-              <p>{{photo.description}}</p>
-              <p>{{photo.image_pic.url}}</p>
-              <a class="info" href="{% url 'imagedetails' photo.id %}"><img src="{{photo.image_pic.url}}" class="img-responsive" alt="Image" style="width: 130px; height: 123px;">
-              </a>
-            </div>
-        </div>
-    </div> -->
+<!-- <div class="row">
+  {% for photo in image %}
     <div class=" container m-4">
-      <div class="row">
+      <div class="">
         <div class=" col-md-4">
           <div class="card">
             <a href="{% url 'imagedetails' photo.id %}"><img src="{{photo.image_pic.url}}" class="card-img-top" alt="..."></a>
@@ -40,22 +29,27 @@
       </div>
       
     </div>
-
-    <!-- <div class="row">
-      <div class="card bg-dark text-white col-md-4">
-        <img src="{{photo.image_pic.url}}" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-      </div>
-    </div> -->
     {% empty %}
     <h3>Image is not available</h3>
     {% endfor %}
+</div> -->
+
+<div class="container-fluid p-4 home">
+  <div class="row">
+    {% for photo in image %}
+    <div class="col-md-4 img">
+      <!-- {{photo.name}} -->
+      <a href="{% url 'imagedetails' photo.id %}"><img src="{{photo.image_pic.url}}" class="card" alt="..." style="width: 400px; height: 330px;"></a>
+     
+    </div>
+    {% empty %}
+    <h3>Image is not available</h3>
+    {% endfor %}
+  </div>
+</div>
 
 
 
 
+{% include "footer.html" %}
 {% endblock %}
