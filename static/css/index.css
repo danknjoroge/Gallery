@@ -1,7 +1,10 @@
-*{
+body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /* background-color: #c7770f; */
+    background-color: #c7770f;
 }
 .home{
     background-color: rgb(181,197,197);
+}
+.int{
+    background-color: antiquewhite;
 }
