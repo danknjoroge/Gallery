@@ -46,5 +46,14 @@ def search(request):
         return render(request, 'search.html')
 
 
+def filter_location(request):
+    if 'image' in request.GET and request.GET["image"]:
+        location = request.GET.get('image')
+        filtername= Image.filter_by_location(location)
+        return render(request,'index.html', {"image": filtername})
+    else:
+        return render(request, 'index.html')
+
+
 
 

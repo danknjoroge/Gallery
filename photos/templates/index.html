@@ -10,9 +10,19 @@
 {% block content %}
 {{block.super}}
 
-<div class="container-fluid " style="">
+<div class="container-fluid " style="font-family: Informative;">
     <h1 class="text-center">Explore My Gallery Store</h1>
 </div>
+<form class="navbar-form" role="filter" action="{% url 'filter' %}">
+
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="filter by location" name="image">
+    <div class="input-group-btn">
+      <button class="btn btn-default text-white" type="submit">FILTER</button>
+    </div>
+  </div>
+
+</form>
 <!-- <div class="row">
   {% for photo in image %}
     <div class=" container m-4">

@@ -40,6 +40,11 @@ class Image(models.Model):
         image= cls.objects.filter(category__category__icontains=category)
         return image
 
+    @classmethod
+    def filter_by_location(cls, location):
+        image= cls.objects.filter(location__location__icontains= location)
+        return image
+
     def __str__(self):
         return self.name
     class Meta:
