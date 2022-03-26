@@ -10,7 +10,7 @@
 {% block content %}
 {{block.super}}
 
-<div class="container-fluid ">
+<div class="container-fluid " style="">
     <h1 class="text-center">Explore My Gallery Store</h1>
 </div>
 <!-- <div class="row">
@@ -34,12 +34,12 @@
     {% endfor %}
 </div> -->
 
-<div class="container-fluid p-4 home">
+<div class="container-fluid p-4 home " style="height: 700px;">
   <div class="row">
     {% for photo in image %}
     <div class="col-md-4 mt-3 img">
       <!-- {{photo.name}} -->
-      <a href="{% url 'imagedetails' photo.id %}"><img src="{{photo.image_pic.url}}" class="card" alt="..." style="width: 400px; height: 310px;"></a>
+      <a href="{% url 'imagedetails' photo.id %}"><img src="{{photo.image_pic.url}}" class="card" alt="..." style="width: 400px; height: 290px;"></a>
      
     </div>
     {% empty %}

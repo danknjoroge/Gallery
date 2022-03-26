@@ -5,13 +5,13 @@
 {% block content %}
 {{block.super}}
 
-<div class="container">
+<div class="container-fluid" style="background-color: rgb(181,197,197);; height:600px">
 
     <div class="row">
         {% if image%}
-        <h2>Found {{ image|length }} of searched term {{message}}</h2>
+        <h2>Found {{ image|length }} results of searched category {{message}}</h2>
         {% else %}
-        <h2> No search results associated with {{message}} Category</h2>
+        <h2> No search results associated with  {{message}} Category</h2> </h2>
         {% endif %}
 
     </div>
@@ -20,11 +20,14 @@
 
         {% if image %}
         {% for img in image %}
-        <div class="col-sm-6 col-md-3">
-            <h1>{{img.name}}</h1>
+        <div class="col-sm-4">
+            <img src="{{img.image_pic.url}}" class="card" style="width: 400px; height: 290px;">   
+            {{img.name}}
         </div>
         {% endfor %}
         {% endif %}
     </div>
 </div>
+
+{% include "footer.html"%}
 {% endblock %}

@@ -42,8 +42,8 @@ def search(request):
         return render(request, 'search.html',{"message":message, "image":searchname})
 
     else:
-        message = f"{category}"
-        return render(request, 'search.html', {'message':message})
+        # message = f"Category not found"
+        return render(request, 'search.html')
 
 
 
