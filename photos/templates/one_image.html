@@ -1,36 +1,48 @@
 {%extends 'base.html'%}
-{% load bootstrap5 %} 
+{% load bootstrap5 %}
+{% load static %}
+
+
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/single.css' %}">
+{% endblock %}
 
 {% block content %}
 {{block.super}}
 
-<h3>Coming Soon</h3>
-
-<div class="row container">
-    <img src="{{image.image_pic.url}}"  class="img-responsive" alt="">
-    <h1>{{image.name}}</h1>
-    <p>{{image.description}}</p>
-    <h4> {{image.location}}</h4>
-    <h4>{{image.category}}</h4>
 
 
-    <p>{{image.image_pic.url}}</p>
+<div class="container bg-primary">
+  <div class="row">
+    <div class="col-md-8 img ">
+      <img src="{{image.image_pic.url}}" class="img-responsive" alt="">
+      
+    </div>
+  
+    <div class="col-md-3">
+      <h1>{{image.name}}</h1>
+      <p>{{image.description}}</p>
+      <h4> {{image.location}}</h4>
+      <h4>{{image.category}}</h4>
+      <button style="background:orangered; color:white; text-align:center;" onclick="CopyUrl()">Copy Image URL</button>
+      <input style="text-align:center;" type="text" value="{{image.image_pic.url}}" id="url">
+  
+    </div>
+  </div>
 
-    <button style="background:green; text-align:center;" onclick="CopyText()">Copy URL</button>
-    <input style="text-align:center;" type="text" value="{{image.image_pic.url}}"id="yourtext">
-
-    {% block scripts %}
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-     {% bootstrap_javascript %}
-     <script>
-        function CopyText() {
-        var text = document.getElementById('yourtext')
-        text.select();
-        document.execCommand('copy')
-      }
-      </script>
-    {% endblock %}
+  {% block scripts %}
+  {% bootstrap_javascript %}
+  <script>
+    function CopyUrl() {
+      var text = document.getElementById('url')
+      text.select();
+      document.execCommand('copy')
+      alert('The image URL has been copied')
+    }
+  </script>
+  {% endblock %}
 
 </div>
-        
+
 {% endblock %}

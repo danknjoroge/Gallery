@@ -42,7 +42,7 @@ def search(request):
         return render(request, 'search.html',{"message":message, "image":searchname})
 
     else:
-        message = "There are no results associated with the search term"
+        message = f"{category}"
         return render(request, 'search.html', {'message':message})
 
 
