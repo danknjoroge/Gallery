@@ -1,17 +1,17 @@
 {%extends 'base.html'%}
- {% load static %}
-{% load bootstrap5 %} 
+{% load static %}
+{% load bootstrap5 %}
 
 {% block styles %}
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/ind.css' %}">
-  {% endblock %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/ind.css' %}">
+{% endblock %}
 
 {% block content %}
 {{block.super}}
 
 <div class="container-fluid " style="font-family: Informative;">
-    <h1 class="text-center">Explore My Gallery Store</h1>
+  <h1 class="text-center">Explore My Gallery Store</h1>
 </div>
 <form class="navbar-form" role="filter" action="{% url 'filter' %}">
 
@@ -49,8 +49,9 @@
     {% for photo in image %}
     <div class="col-md-4 mt-3 img">
       <!-- {{photo.name}} -->
-      <a href="{% url 'imagedetails' photo.id %}"><img src="{{photo.image_pic.url}}" class="card" alt="..." style="width: 400px; height: 290px;"></a>
-     
+      <a href="{% url 'imagedetails' photo.id %}"><img src="{{photo.image_pic.url}}" class="card" alt="..."
+          style="width: 400px; height: 290px;"></a>
+
     </div>
     {% empty %}
     <h3>Image is not available</h3>

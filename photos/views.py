@@ -16,9 +16,6 @@ def one_image(request, image_id):
 
     return render(request, 'one_image.html', {'image': image})
 
-# def one_image(request,pk):
-#     image= Image.objects.get(id=pk) 
-#     return render(request, 'one_image.html', {'image':image})
 
 # def search(request):
 #     if 'image' in request.GET and request.GET["image"]:
@@ -42,7 +39,7 @@ def search(request):
         return render(request, 'search.html',{"message":message, "image":searchname})
 
     else:
-        # message = f"Category not found"
+        
         return render(request, 'search.html')
 
 

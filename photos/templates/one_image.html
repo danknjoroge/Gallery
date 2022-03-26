@@ -11,13 +11,13 @@
 {% block content %}
 {{block.super}}
 
-<!-- <p>View all details</p> -->
+
 
 <div class="container-fluid home pb-4">
   <div class="row container">
     <div class="col-md-8 img my-4">
       <img src="{{image.image_pic.url}}" class="img-responsive" alt="">
-      
+
       <!-- <h1>{{image.name}}</h1>
       <p>{{image.description}}</p>
       <h4> {{image.location}}</h4>
@@ -26,16 +26,23 @@
       <input style="text-align:center;" type="text" value="{{image.image_pic.url}}" id="url">
    -->
     </div>
-    
-  
+
+
     <div class="col-md-3 my-4">
-      <h1>Name: {{image.name}}</h1>
-      <p> Description: {{image.description}}</p>
-      <h4>Location: {{image.location}}</h4>
-      <h4>Category: {{image.category}}</h4>
-      <button style="background:orangered; color:white; text-align:center;" onclick="CopyUrl()">Copy Image URL</button>
+      <h3>Image Name: <span style="color:orangered; ">{{image.name}}</span></h3>
+       <h3>Description:</h3>
+      <p><span style="color:orangered; font-style: italic;">{{image.description}}</span></p>
+     
+
+     
+      <p>Location: <span style="color:orangered; font-style: italic;">{{image.location}}</span></p>
+      
+      <p>Category: <span style="color:orangered; font-style: italic;">{{image.category}}</span></p>
+
+      
       <input style="text-align:center;" type="text" value="{{image.image_pic.url}}" id="url">
-  
+      <button style="background:orangered; color:white; text-align:center;" onclick="CopyUrl()">Copy Image URL</button>
+
     </div>
   </div>
 

@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-<nav class="navbar navbar-inverse bg-dark ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand "  style="font-size: 33px; color:orangered; font-weight: bold" href="{% url 'index' %}" >Daniels Gallery</a>
-    </div>
+  <nav class="navbar navbar-inverse bg-dark ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand " style="font-size: 33px; color:orangered; font-weight: bold"
+          href="{% url 'index' %}">Picture Gallery</a>
+      </div>
 
-    <div class="col-sm-4 col-md-4 navbar-right">
+      <div class="col-sm-4 col-md-4 navbar-right">
 
-      <form class="navbar-form" role="search" action="{% url 'search' %}">
+        <form class="navbar-form" role="search" action="{% url 'search' %}">
 
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search by category. e.g sports" name="image">
-          <div class="input-group-btn">
-            <button class="btn btn-default text-white" type="submit">Search</button>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search by category. e.g sports" name="image">
+            <div class="input-group-btn">
+              <button class="btn btn-default text-white" type="submit">Search</button>
+            </div>
           </div>
-        </div>
 
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </body>
+
 </html>
