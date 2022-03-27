@@ -51,6 +51,12 @@ class TestImage(TestCase):
         Location.objects.all().delete()
         Category.objects.all().delete()
 
+    def test_delete_image(self):
+        self.new_image= Image(name="Curly", description="An amazing picture", image="Add image", location=self.nairobi, category= self.sports )
+        self.new_image.save_image()
+        self.new_image.delete_image()
+        
+
 
 
 

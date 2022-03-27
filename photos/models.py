@@ -29,9 +29,9 @@ class Image(models.Model):
     
 
     # @classmethod
-    # def search_by_name(cls, name):
-    #     image= cls.objects.filter(name__icontains=name)
-    #     return image
+    # def search_by_name(cls, category):
+    #     image= cls.objects.filter(_category__icontains=name)
+    #     return imagecategory_
     def save_image(self):
         self.save()
 
@@ -44,6 +44,10 @@ class Image(models.Model):
     def filter_by_location(cls, location):
         image= cls.objects.filter(location__location__icontains= location)
         return image
+
+    @classmethod
+    def delete_image(self):
+        self.delete()
 
     def __str__(self):
         return self.name
