@@ -20,7 +20,7 @@ It's a web application that allows one to view photos and search for photos base
 * The application will run in terminal and you will follow the url provided in terminal for you to be able to view the the application in your browser.
 
 ## Live link
-* You can see the app from the following live link: 
+* You can see the app from the following live link: https://pic-dan.herokuapp.com/
 
 ## Technologies and Software Used
 * Python django
