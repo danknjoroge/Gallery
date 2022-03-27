@@ -23,32 +23,13 @@
   </div>
 
 </form>
-<!-- <div class="row">
-  {% for photo in image %}
-    <div class=" container m-4">
-      <div class="">
-        <div class=" col-md-4">
-          <div class="card">
-            <a href="{% url 'imagedetails' photo.id %}"><img src="{{photo.image_pic.url}}" class="card-img-top" alt="..."></a>
-            
-            <div class="card-footer">
-              <small class="text-muted">{{photo.location}}</small>
-            </div>
-          </div>
-      </div>
-      </div>
-      
-    </div>
-    {% empty %}
-    <h3>Image is not available</h3>
-    {% endfor %}
-</div> -->
+
 
 <div class="container-fluid p-4 home " style="height: 700px;">
   <div class="row">
     {% for photo in image %}
     <div class="col-md-4 mt-3 img">
-      <!-- {{photo.name}} -->
+      
       <a href="{% url 'imagedetails' photo.id %}"><img src="{{photo.image_pic.url}}" class="card" alt="..."
           style="width: 400px; height: 290px;"></a>
 
